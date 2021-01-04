@@ -9,7 +9,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    /* ‼️⭐️ 記得要刪除 plist 內 Application Scene Manifest 下的 Storyboard 欄位 ⭐️‼️ */
+    /* ❗️⭐️ 記得要刪除 ⭐️❗️
+     * 1️⃣ 專案內的 Main Interface 刪掉 Main
+     * 2️⃣ plist 內 Application Scene Manifest 下的 Storyboard 欄位 ⭐️‼️ */
     /* 🔰⭐️ window.rootViewController 屬性決定了首頁 ⭐️ */
     var window: UIWindow?
 
@@ -32,16 +34,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainVC = MainViewController()
         mainNav.viewControllers = [mainVC]
         // 自訂標題
-        mainNav.title = "MainNav"
+        mainNav.title =   "MainNav"
         secondTab.title = "SecondTab"
-        mainVC.title = "MainVC"
+        mainVC.title =    "MainVC"
         
-        /* 🔰⭐️ 設定 window 首頁並呈現 */
+        /* 🔰 設定 window 的主頁並呈現 🔰
+         * ⭐️ 也就是 App 的第一個畫面 ⭐️ */
         window?.rootViewController = mainTab
         window?.makeKeyAndVisible()
         
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         
     }

@@ -21,12 +21,18 @@ class MainViewController: UIViewController {
     }
     
     private func addButton() {
+        
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(MainViewController.buttonTapped), for: .touchUpInside)
+        
         button.setTitle("Go to Detail", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemPurple
+        
+        button.addTarget(self,
+                         action: #selector(MainViewController.buttonTapped),
+                         for: .touchUpInside)
+        
         view.addSubview(button)
         
         // button autolayout array
@@ -34,8 +40,8 @@ class MainViewController: UIViewController {
                                                   relatedBy: .equal, toItem: view,
                                                   attribute: .centerX, multiplier: 1.0, constant: 0)
         let verticalCenter = NSLayoutConstraint(item: button, attribute: .centerY,
-                                                  relatedBy: .equal, toItem: view,
-                                                  attribute: .centerY, multiplier: 1.0, constant: 0)
+                                                relatedBy: .equal, toItem: view,
+                                                attribute: .centerY, multiplier: 1.0, constant: 0)
         let width = NSLayoutConstraint(item: button, attribute: .width,
                                        relatedBy: .equal, toItem: nil,
                                        attribute: .width, multiplier: 1.0, constant: 100)
